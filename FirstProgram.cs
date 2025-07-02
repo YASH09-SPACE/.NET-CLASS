@@ -10,7 +10,8 @@ namespace CLASS_BHUMI_MA_M
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!"); 
+            Console.WriteLine("Hello, World!");
+            Console.WriteLine("This is my first program in C#.");
             Console.ReadLine(); // Wait for user input before closing the console window
         }
     }
