@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CLASS_BHUMI_MA_M.Lab_Tutorial_1</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,10 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuiltInFunctions.cs" />
     <Compile Include="Class_4_7.cs" />
     <Compile Include="FirstProgram.cs" />
     <Compile Include="Lab-Tutorial-1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Q10.cs" />
+    <Compile Include="Q14.cs" />
     <Compile Include="Q2_UserDetails.cs" />
   </ItemGroup>
   <ItemGroup>

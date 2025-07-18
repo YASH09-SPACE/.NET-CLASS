@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace CLASS_BHUMI_MA_M
     {
         static void Main(string[] args)
         {
-            Q11();
+            Q18();
         }
         static void Q1()
         {
@@ -262,9 +263,198 @@ namespace CLASS_BHUMI_MA_M
             {
                 Console.WriteLine("Invalid prefix. Please use 'Mr.' or 'Ms.'");
             }
-
         }
 
+        static void Q12()
+        {   
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine("Your name is: " + name);
+        }
+
+        static void Q13(int n)
+        { 
+            int a = 0, b = 1, c;
+            Console.Write("Fibonacci Series: ");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(a + " ");
+                c = a + b;
+                a = b;
+                b = c;
+            }
+            Console.WriteLine();
+        }
+
+        static void Q14()
+        {
+            Console.Write("Enter NUmber : ");
+            int n = Int32.Parse(Console.ReadLine());
+            int newNum = 0;
+            while (n > 0)
+            {
+                int temp = n % 10;
+                newNum = newNum*10 + temp;
+                n /= 10;
+            }
+            
+            while (newNum > 0)
+            {
+                int temp = newNum % 10;
+                switch (temp)
+                {
+                    case 0: Console.Write(" ZERO "); break;
+                    case 1: Console.Write(" ONE "); break;
+                    case 2: Console.Write(" TWO "); break;
+                    case 3: Console.Write(" THERE "); break;
+                    case 4: Console.Write(" FOUR "); break;
+                    case 5: Console.Write(" FIVE "); break;
+                    case 6: Console.Write(" SIX "); break;
+                    case 7: Console.Write(" SEVEN "); break;
+                    case 8: Console.Write(" EIGHT "); break;
+                    case 9: Console.Write(" NINE "); break;
+                }
+                newNum /= 10;
+            }
+        }
+
+        //15  Write a Program to check whether the given no is Armstrong no or not.
+        static void Q15()
+        {
+            Console.Write("Enter a number: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+         
+
+            //finding digits
+            int temp = n;
+            int digits = 0;
+            while (temp > 0)
+            {   
+                digits++;
+                temp /= 10;
+            }
+
+            // Calculating the sum of the pow of digit of each digit
+            int sum = 0;
+            temp = n;   
+            while (temp > 0)
+            {
+                int digit = temp % 10;
+                sum += (int)Math.Pow(digit, digits);
+                temp /= 10;
+            }
+            // Checking if the sum is equal to the original number
+            if (sum == n)
+            {
+                Console.WriteLine($"{n} is an Armstrong number.");
+            }
+            else
+            {
+                Console.WriteLine($"{n} is not an Armstrong number.");
+            }
+        }
+
+        /* 16  Write a program to display a pattern like a right angle triangle using an asterisk
+
+ The pattern like :
+
+ *
+
+ **
+
+ ***
+
+ *****/
+        static void Q16()
+        {
+            Console.Write("Enter the number of rows for the triangle : ");
+            int rows = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= rows; i++)
+            {
+                for(int j = 1; j <= i; j++)
+                {
+                    Console.Write('*'+" ");
+                }
+                Console.WriteLine();
+            }
+        }
+        /*17. Write a Program to generate following output.
+
+1
+
+1 2
+
+1 2 3
+
+1 2 3 4*/
+        static void Q17()
+        {
+            Console.Write("Enter the number of rows for the triangle : ");
+            int rows = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= rows; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(j + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+        /*18 Write a program to make such a pattern like a right angle triangle with the number increased by 1.
+
+The pattern like :
+
+1  
+
+2 3  
+
+4 5 6  
+
+7 8 9 10*/
+        static void Q18()
+        {
+            Console.Write("Enter the number of rows for the triangle : ");
+            int rows = Convert.ToInt32(Console.ReadLine());
+            int num = 1; // Initialize the number to start from
+            for (int i = 1; i <= rows; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(num + " ");
+                    num++; // Increment the number after printing
+                }
+                Console.WriteLine();
+            }
+        }
+        /*19. Write a program to make such a pattern as a pyramid with an asterisk. 
+
+   *   
+
+  * *  
+
+ * * *
+
+* * * **/
+        public static void Q19()
+        {
+            Console.Write("Enter the number of rows for the pyramid: ");
+            int rows = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= rows; i++)
+            {
+                // Print leading spaces
+                for (int j = i; j < rows; j++)
+                {
+                    Console.Write(" ");
+                }
+                // Print asterisks
+                for (int j = 1; j <= (2 * i - 1); j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+        }
 
     }
 }
